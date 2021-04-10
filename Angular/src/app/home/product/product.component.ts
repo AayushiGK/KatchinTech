@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { HomeService } from '../home.service';
 
 @Component({
   selector: 'app-product',
@@ -7,12 +8,24 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ProductComponent implements OnInit {
 
-  constructor() { }
+  constructor(public service: HomeService) { }
+  @Input() product = {
+    p_id: "",
+    name: "",
+    price: "",
+    description: "",
+    image: ""
+  };
 
   ngOnInit(): void {
   }
-  addProductToCart(){}
-  
-  productQuantity(){}
+
+  addProductToCart(item) {
+    this.service.addProductToCart(item, data => {
+      console.log(data);
+    }, err => {
+      console.log(err);
+    })
+  }
 
 }

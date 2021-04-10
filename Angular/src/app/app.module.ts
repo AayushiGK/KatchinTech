@@ -1,6 +1,6 @@
 import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { routing } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
@@ -22,6 +22,7 @@ import { ProductComponent } from './home/product/product.component';
   imports: [
     BrowserModule,
     FormsModule,
+    HttpClient,
     routing
   ],
   schemas:[CUSTOM_ELEMENTS_SCHEMA],

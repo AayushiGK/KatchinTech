@@ -1,14 +1,13 @@
 <div class="container">
-    <img src="" alt="">
-    <p class="row mx-1"></p>
+    <img src="product?.img" alt="">
+    <p class="m-1">
+        <b>{{product?.name}}</b>
+        <span>{{product?.price}}</span>
+    </p>
+    <p class="mx-1">{{product?.description}}</p>
     <div class="row">
-        <div class="col-6">
-            <button class="btn btn-light" (click)="productQuantity()">
-                <p class="text-primary"> </p>
-            </button>
-        </div>
-        <div class="col-6">
-            <button class="btn btn-light" (click)="addProductToCart()">
+        <div class="col-12">
+            <button class="btn btn-light" (click)="addProductToCart(product?.p_id)">
                 <p class="text-primary"> Add Item</p>
             </button>
         </div>
