@@ -1,26 +1,28 @@
+
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { ConfigService } from '../config.service';
 
 @Injectable({
   providedIn: 'root'
 })
 export class HomeService {
 
-  constructor(public http: HttpClient) { }
+  constructor(public http: HttpClient, public config: ConfigService) { }
 
   getProducts(callback, errCallback) {
-    this.http.get('/products').subscribe(data => {
+    this.http.get(this.config.baseURL + '/products').subscribe(data => {
       callback(data);
     }, err => {
-      errCallback(err);
+      errCallback(err.content);
     })
   }
 
   addProductToCart(product, callback, errCallback) {
-    this.http.post('/addProductToCart', product).subscribe(data => {
+    this.http.post(this.config.baseURL + '/addProductToCart', product).subscribe(data => {
       callback(data);
     }, err => {
-      errCallback(err.stack);
+      errCallback(err.content);
     })
   }
 

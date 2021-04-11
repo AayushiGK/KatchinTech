@@ -1,5 +1,5 @@
-<div class="container">
-    <img src="product?.img" alt="">
+<div class="container border p-2">
+    <img class="mx-5 pl-4" src="{{product?.image}}" alt="">
     <p class="m-1">
         <b>{{product?.name}}</b>
         <span>{{product?.price}}</span>
@@ -7,8 +7,8 @@
     <p class="mx-1">{{product?.description}}</p>
     <div class="row">
         <div class="col-12">
-            <button class="btn btn-light" (click)="addProductToCart(product?.p_id)">
-                <p class="text-primary"> Add Item</p>
+            <button class="btn btn-light w-100 text-primary" (click)="addProductToCart(product)">
+                Add Item
             </button>
         </div>
     </div>

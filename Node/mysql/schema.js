@@ -48,7 +48,7 @@ module.exports = function () {
         }
     });
 
-    Cart.hasMany(Product, { foreignKey: 'items' });
+    Cart.hasMany(Product, { foreignKey: 'p_id' });
 
     return {
         models: {

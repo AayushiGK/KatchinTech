@@ -4,7 +4,7 @@ module.exports = {
         mysql_port: 3306,
         mysql_user: 'root',
         mysql_password: 'root',
-        mysql_db: 'katchin'
+        mysql_db: 'Demo_Katchin'
     },
     server: {
         port: 3000

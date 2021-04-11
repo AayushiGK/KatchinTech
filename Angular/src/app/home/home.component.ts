@@ -8,7 +8,7 @@ import { HomeService } from './home.service';
 })
 export class HomeComponent implements OnInit {
 
-  public products = [];
+  public products;
   constructor(public service: HomeService) { }
 
   ngOnInit(): void {
@@ -17,7 +17,7 @@ export class HomeComponent implements OnInit {
 
   getProducts() {
     this.service.getProducts(data => {
-      this.products = data.resp;
+      this.products = data.msg.products;
       console.log(data)
     },
       err => {

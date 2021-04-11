@@ -36,7 +36,6 @@ function startApp(arrg) {
 
     app.use("/", require("./Functional/Product")(arrg));
     app.use("/", require("./Functional/cart")(arrg));
-    app.use("/", require("./Functional/binSet")(arrg));
 
     app.get('/*', function (req, res) {
         p = path.join(appRoot.toString(), 'index.html');
