@@ -9,6 +9,7 @@ import { CartComponent } from './cart/cart.component';
 import { FormsModule } from '@angular/forms';
 import { ProductComponent } from './home/product/product.component';
 import { HttpClientModule } from '@angular/common/http';
+import { MatBadgeModule } from '@angular/material/badge';
 
 @NgModule({
   declarations: [
@@ -23,6 +24,7 @@ import { HttpClientModule } from '@angular/common/http';
     BrowserModule,
     FormsModule,
     HttpClientModule,
+    MatBadgeModule,
     routing
   ],
   schemas:[CUSTOM_ELEMENTS_SCHEMA],

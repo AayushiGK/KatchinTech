@@ -1,10 +1,27 @@
 <div class="container">
-    <div class="row">
-        <div class="col-9 border">
-
+    <div class="row m-4">
+        <div class="col-7 border mx-5">
+            <div class="row py-4" *ngFor="let item of items;let i=index;">
+                <ng-container>
+                    <span class="col-1">
+                        <span class="float-left"> {{i+1}}.</span>
+                    </span>
+                    <div class="col-2">
+                        <img src="{{item?.products[0].image}}" class="w-50 h-50" alt="{{item?.products[0].name}}">
+                    </div>
+                    <span class="col-7">
+                        {{item?.products[0].description}}
+                    </span>
+                    <span class="col-2 text-center">
+                        {{item?.products[0].price}}
+                    </span>
+                </ng-container>
+            </div>
         </div>
-        <div class="col-3 border">
 
+        <div class="col-3 border py-4">
+            <h1 class="text-center"> Total Price </h1>
+            <h3 class="mt-5 text-primary text-center">{{total}}</h3>
         </div>
     </div>
 </div>

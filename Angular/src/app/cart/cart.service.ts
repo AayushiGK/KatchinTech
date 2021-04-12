@@ -14,7 +14,7 @@ export class CartService {
     this.http.get(this.config.baseURL + '/cart').subscribe(data => {
       callback(data);
     }, err => {
-      errCallback(err.content);
+      errCallback(err);
     })
   }
 }

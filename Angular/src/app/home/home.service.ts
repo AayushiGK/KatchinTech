@@ -14,7 +14,15 @@ export class HomeService {
     this.http.get(this.config.baseURL + '/products').subscribe(data => {
       callback(data);
     }, err => {
-      errCallback(err.content);
+      errCallback(err.error.content);
+    })
+  }
+
+  getCount(callback, errCallback) {
+    this.http.get(this.config.baseURL + '/countItems').subscribe(data => {
+      callback(data);
+    }, err => {
+      errCallback(err.error.content);
     })
   }
 
@@ -22,7 +30,7 @@ export class HomeService {
     this.http.post(this.config.baseURL + '/addProductToCart', product).subscribe(data => {
       callback(data);
     }, err => {
-      errCallback(err.content);
+      errCallback(err.error.content);
     })
   }
 

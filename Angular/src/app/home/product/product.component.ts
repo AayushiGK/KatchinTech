@@ -16,17 +16,14 @@ export class ProductComponent implements OnInit {
     description: "",
     image: ""
   };
+  public itemsCount;
 
   ngOnInit(): void {
   }
 
   addProductToCart(item) {
-    console.log(item)
-    this.service.addProductToCart(item, data => {
-      console.log(data);
-    }, err => {
-      console.log(err);
-    })
+    this.service.getCount(data => { this.itemsCount = data.msg; }, err => { console.log(err) });
+    this.service.addProductToCart(item, data => { console.log("Added"); }, err => { console.log(err); });
   }
 
 }

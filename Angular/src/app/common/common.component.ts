@@ -8,6 +8,7 @@ import { Component, OnInit } from '@angular/core';
 export class CommonComponent implements OnInit {
 
   constructor() { }
+  public items;
 
   ngOnInit(): void {
   }

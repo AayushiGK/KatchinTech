@@ -25,8 +25,9 @@ module.exports = function () {
 
     const Product = sequelize.define('products', {
         p_id: {
-            type: Sequelize.STRING,
-            primaryKey: true
+            type: Sequelize.INTEGER,
+            primaryKey: true,
+            autoIncrement: true
         },
         name: Sequelize.STRING,
         description: {
@@ -40,9 +41,10 @@ module.exports = function () {
     });
 
     const Cart = sequelize.define('carts', {
-        c_id: { type: Sequelize.STRING, primaryKey: true },
-        items: {
-            type: Sequelize.STRING,
+        c_id: {
+            type: Sequelize.INTEGER,
+            autoIncrement:true,
+            primaryKey: true,
             references: 'products', //table name
             referencesKey: 'p_id' //coloumn name in the table
         }
